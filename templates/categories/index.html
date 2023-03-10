@@ -1,0 +1,21 @@
+{% extends 'layouts/index.html' %}
+
+
+{% block content %}
+<style type="text/css">
+        .categories {
+            width: 50%;
+            margin-left: 10%;
+        }
+    </style>
+    <div class="categories">
+        {% for category in categories %}
+            <img class="category_img" src="/media/{{ category.img }}" style="width: 5%" alt="">
+                <a href="/products/?category={{ category.id }}">
+                    {{ category.name }}
+                </a>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
